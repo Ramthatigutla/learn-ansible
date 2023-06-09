@@ -5,7 +5,7 @@
       ansible.builtin.debug:
         msg: hello world
 
-    - name: Include task list in play
+    - name: Include random
         ansible.builtin.include_tasks:
           file: random.yml
 
