@@ -5,9 +5,9 @@
       ansible.builtin.debug:
         msg: hello world
 
-    - name: Include random
-        ansible.builtin.include_tasks:
-          file: random.yml
+    - name: Include random file
+      ansible.builtin.include_tasks:
+        file: random.yml
 
 
 
