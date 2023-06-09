@@ -2,6 +2,7 @@
   hosts: all
   vars:
     URL: store.com
+  tasks:
     - name: print URL Variable
       ansible.builtin.debug:
         msg: URL - {{ URL }}
