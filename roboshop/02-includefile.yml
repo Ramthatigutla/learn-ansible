@@ -1,0 +1,13 @@
+- name: demo on include files
+  hosts: all
+  tasks:
+    - name: print hello world
+      ansible.builtin.debug:
+        msg: hello world
+
+    - name: Include task list in play
+        ansible.builtin.include_tasks:
+          file: random.yml
+
+
+
