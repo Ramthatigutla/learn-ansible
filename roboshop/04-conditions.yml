@@ -1,13 +1,20 @@
-- name: demo on conditions
+- name: demo on loops
   hosts: localhost
   connection: local
   tasks:
-    - name: print hello world
+    - name: print stationary name
       ansible.builtin.debug:
-        msg: hello world
-      when: what == "world"
-
-    - name: print hello universe
+        msg: stationary - {{ item }}
+      loop:
+        - pen
+        - pencil
+        - book
+        - eraser
+    - name: print stationary name and quantity
       ansible.builtin.debug:
-        msg: hello universe
-      when: what == "universe"
+        msg: stationary - {{ item.name }},quantity - {{ item.quantity }}
+      loop:
+        - { name: pen, quantity: 100}
+        - { name: pencil, quantity: 50}
+        - { name: book, quantity: 100}
+        - { name: eraser, quantity: 50}
